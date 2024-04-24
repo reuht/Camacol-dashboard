@@ -44,7 +44,10 @@ class Lienal extends Component {
 
     render() {
       return (
-        <div>
+        <div className="chart-lienal">
+          <div className="chart-lineal-title">
+            <p className="chart-lineal-title-text">Estadística general</p>
+          </div>
           <div id="chart">
             <ReactApexChart options={this.state.options} series={this.state.series} type="area" height={350} />
           </div>
