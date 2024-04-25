@@ -10,11 +10,18 @@ class Sector extends Component {
       
         series: [44, 55, 13],
         options: {
+          legend: {
+            show: true,
+            position: 'bottom',
+            horizontalAlign: 'center', 
+          }, 
+
           chart: {
-            width: 380,
+            width: '100%',
             type: 'pie',
+            labels: false
           },
-          labels: ['Team A', 'Team B', 'Team C'],
+          
           responsive: [{
             breakpoint: 480,
             options: {
@@ -32,8 +39,6 @@ class Sector extends Component {
       };
     }
 
-  
-
     render() {
       return (
         <div className="chart-sector-style">
@@ -41,7 +46,7 @@ class Sector extends Component {
             <p className="chart-sector-style-title-text">Ventas de vivienda en el atlántico</p>
           </div>
           <div id="chart">
-            <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={360} />
+            <ReactApexChart options={this.state.options} series={this.state.series} type="pie" />
           </div>
           <div id="html-dist"></div>
         </div>
