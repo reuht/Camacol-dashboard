@@ -66,7 +66,7 @@ class Bars extends Component {
           <div id="chart">
             <ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={350} />
           </div>
-          <div id="html-dist"></div>
+          {/* <div id="html-dist"></div> */}
         </div>
       );
     }

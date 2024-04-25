@@ -2,6 +2,9 @@ import React from 'react';
 import Lineal from './Components/Lineal';
 import Sector from './Components/sector';
 import ListProyects from './Components/ListProyects';
+import GraficaBarra from './Components/graficabarra';
+import Image from './Components/image';
+
 import './App.css';
 
 function App() {
@@ -35,19 +38,19 @@ function App() {
   ]; 
 
   return (
-    <div className="container-fluid background-color-dashboard">
-      <div className='row'>
+    <div className=" background-color-dashboard m-3">
+      <div className='row p-3'>
 
         <div className='col-md-8' style={{padding:'1rem'}}>
           <Lineal />
         </div>
 
         <div className='col'>
-          <h1>Grafico</h1>
+          <Image/>
         </div>
 
       </div>
-      <div className='row'>
+      <div className='row p-3'>
 
         <div className='col-sm'>
          <ListProyects title={'Proyecto por constructora'} data = {projectData}
@@ -62,9 +65,10 @@ function App() {
           <Sector/>
         </div>
 
-        <div className='col'>
-          <h1>Grafico</h1>
+        <div className='col-sm'>
+          <GraficaBarra/>
         </div>
+
 
       </div>
     </div>
