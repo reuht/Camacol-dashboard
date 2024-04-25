@@ -1,48 +1,89 @@
+import React from 'react';
 import './App.css';
-import Lienal from './Components/Lineal';
+import Lineal from './Components/Lineal';
 import Sector from './Components/sector';
-import Bars from './Components/Bars';
+import Proyecto1 from './Components/proyecto1';
+import Proyecto2 from './Components/proyecto2';
+import './style.css';
 
 function App() {
-  return (
+  const projectData = {
+    title: 'Proyecto por constructora ',
+    subtitle: 'Constructora',
+    info: [
+      { texto: 'Constructora perfil urbano s.a', total: '102' },
+      { texto: 'Portales urbanos s.a', total: '55' },
+      { texto: 'Construcciones marval s.a', total: '88' },
+      { texto: 'Construcciones san vicente s.a', total: '100' },
+      { texto: 'Constructora iza ltda', total: '50' },
+      { texto: 'Sporas s.a.s', total: '40' },
+    ],
     
-    <div className="container-fluid p-5">
-      <div className='col background-color-dashboard'>
-        <div className='row'>
-          <div className='col-6'>
-            <p className='app-title'>Dashboard</p>
-          </div>
-        </div>
-        <div className='row '>
-          <div className='col-8 '>
-            <Lienal/>
-          </div>
-          <div className='col-4 '>
-            <h1>El nuevo</h1>
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col-3 p-3'> 
-            <h1>Grafico 1</h1>
-          </div>
-          <div className='col-3 p-3'> 
-            <h1>Grafico 1</h1>
-          </div>
-          <div className='col-3 p-3'> 
-              <Sector />
-          </div>
-          <div className='col-3 p-3'> 
-            <div className='d-flex'>
-              <div className='title'>
-              Proyecto por constructora
-              </div>
+  };
 
+  const projectData2 = {
+    title: 'Proyecto por entidad fiduciaria ',
+    subtitle: 'Constructora',
+    info: [
+      { texto: 'Constructora perfil urbano s.a', total: '102' },
+      { texto: 'Portales urbanos s.a', total: '55' },
+      { texto: 'Constucciones marval s.a', total: '88' },
+      { texto: 'Construcciones san vicente s.a', total: '100' },
+      { texto: 'Constructora iza ltda', total: '50' },
+      { texto: 'Sporas s.a.s', total: '40' },
+    ],
+  
+  };
+
+  return (
+    <div className="main-container">
+    <div className="container-fluid">
+      <div className='row'>
+        <div className='col-md-9'>
+          
+          <Lineal />
+        </div>
+        <div className='col-3'>
+          <h1></h1>
+        </div>
+      </div>
+
+      <div className='row'>
+        <div className='col-3 p-3'>
+          <div className='d-flex'>
+            <div className='title'>
+              <Proyecto1
+                title={projectData.title}
+                info={projectData.info}
+                total={projectData.total}
+              />
             </div>
           </div>
         </div>
+
+        <div className='col-3 p-3'>
+          <div className='d-flex'>
+            <div className='title'>
+              <Proyecto2
+                title={projectData2.title}
+                info={projectData2.info}
+                total={projectData2.total}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className='col-3 p-3'>
+          <Sector />
+        </div>
       </div>
     </div>
+    </div>
+    
+  
   );
 }
 
 export default App;
+
+

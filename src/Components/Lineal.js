@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import ReactApexChart from "react-apexcharts";
 
-class Lienal extends Component {
+class Lineal extends Component {
     constructor(props) {
       super(props);
 
@@ -17,13 +17,13 @@ class Lienal extends Component {
         options: {
           chart: {
             height: 350,
-            type: 'area'
+            type: 'stright'
           },
           dataLabels: {
             enabled: false
           },
           stroke: {
-            curve: 'smooth'
+            curve: 'straight'
           },
           xaxis: {
             type: 'datetime',
@@ -44,9 +44,9 @@ class Lienal extends Component {
 
     render() {
       return (
-        <div className="chart-lienal">
+        <div className="chart-lineal">
           <div className="chart-lineal-title">
-            <p className="chart-lineal-title-text">Estadística general</p>
+            <p className="chart-lineal-title-text">Dashboard</p>
           </div>
           <div id="chart">
             <ReactApexChart options={this.state.options} series={this.state.series} type="area" height={350} />
@@ -56,5 +56,6 @@ class Lienal extends Component {
       );
     }
   }
+ 
 
-  export default Lienal; 
+  export default Lineal; 
