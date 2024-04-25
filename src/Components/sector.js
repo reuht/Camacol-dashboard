@@ -21,12 +21,13 @@ class Sector extends Component {
             type: 'pie',
             labels: false
           },
+          colors: ['#1b407e', '#99d4d4', '#c6c6f7', '#005bed', '#d2e2f8'],
           
           responsive: [{
             breakpoint: 480,
             options: {
               chart: {
-                width: 200
+                width: '100%'
               },
               legend: {
                 position: 'bottom'

@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import React, {Component} from "react";
 import ReactApexChart from "react-apexcharts";
 
@@ -17,13 +18,22 @@ class Lineal extends Component {
         options: {
           chart: {
             height: 350,
-            type: 'stright'
+            type: 'line', 
+            
           },
+          colors: ['#005bed', '#d2e2f8'],
+
+          fill: {
+             colors: undefined,
+             opacity: 0,
+             type: 'transparent'
+          },
+
           dataLabels: {
             enabled: false
           },
           stroke: {
-            curve: 'straight'
+            curve: 'smooth'
           },
           xaxis: {
             type: 'datetime',
@@ -39,9 +49,6 @@ class Lineal extends Component {
       
       };
     }
-
-  
-
     render() {
       return (
         <div className="chart-lineal">

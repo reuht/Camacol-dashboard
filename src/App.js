@@ -1,86 +1,73 @@
 import React from 'react';
-import './App.css';
 import Lineal from './Components/Lineal';
 import Sector from './Components/sector';
-import Proyecto1 from './Components/proyecto1';
-import Proyecto2 from './Components/proyecto2';
-import './style.css';
+import ListProyects from './Components/ListProyects';
+import './App.css';
 
 function App() {
-  const projectData = {
-    title: 'Proyecto por constructora ',
-    subtitle: 'Constructora',
-    info: [
-      { texto: 'Constructora perfil urbano s.a', total: '102' },
-      { texto: 'Portales urbanos s.a', total: '55' },
-      { texto: 'Construcciones marval s.a', total: '88' },
-      { texto: 'Construcciones san vicente s.a', total: '100' },
-      { texto: 'Constructora iza ltda', total: '50' },
-      { texto: 'Sporas s.a.s', total: '40' },
-    ],
-    
-  };
 
-  const projectData2 = {
-    title: 'Proyecto por entidad fiduciaria ',
-    subtitle: 'Constructora',
-    info: [
-      { texto: 'Constructora perfil urbano s.a', total: '102' },
-      { texto: 'Portales urbanos s.a', total: '55' },
-      { texto: 'Constucciones marval s.a', total: '88' },
-      { texto: 'Construcciones san vicente s.a', total: '100' },
-      { texto: 'Constructora iza ltda', total: '50' },
-      { texto: 'Sporas s.a.s', total: '40' },
-    ],
-  
-  };
+  const projectData = [
+    { texto: 'Constructora perfil urbano s.a', total: '102' },
+    { texto: 'Portales urbanos s.a', total: '55' },
+    { texto: 'Construcciones marval s.a', total: '88' },
+    { texto: 'Construcciones san vicente s.a', total: '100' },
+    { texto: 'Constructora iza ltda', total: '50' },
+    { texto: 'Sporas s.a.s', total: '40' },
+    { texto: 'Construcciones marval s.a', total: '88' },
+    { texto: 'Construcciones san vicente s.a', total: '100' },
+    { texto: 'Constructora iza ltda', total: '50' },
+    { texto: 'Sporas s.a.s', total: '40' },
+    { texto: 'Constructora iza ltda', total: '50' },
+    { texto: 'Sporas s.a.s', total: '40' },
+    { texto: 'Construcciones marval s.a', total: '88' },
+    { texto: 'Construcciones san vicente s.a', total: '100' },
+    { texto: 'Constructora iza ltda', total: '50' },
+    { texto: 'Sporas s.a.s', total: '40' },
+    { texto: 'Construcciones san vicente s.a', total: '100' },
+    { texto: 'Constructora iza ltda', total: '50' },
+    { texto: 'Sporas s.a.s', total: '40' },
+    { texto: 'Constructora iza ltda', total: '50' },
+    { texto: 'Sporas s.a.s', total: '40' },
+    { texto: 'Construcciones marval s.a', total: '88' },
+    { texto: 'Construcciones san vicente s.a', total: '100' },
+    { texto: 'Constructora iza ltda', total: '50' },
+    { texto: 'Sporas s.a.s', total: '40' },
+  ]; 
 
   return (
-    <div className="main-container">
-    <div className="container-fluid">
+    <div className="container-fluid background-color-dashboard">
       <div className='row'>
-        <div className='col-md-9'>
-          
+
+        <div className='col-md-8' style={{padding:'1rem'}}>
           <Lineal />
         </div>
-        <div className='col-3'>
-          <h1></h1>
-        </div>
-      </div>
 
+        <div className='col'>
+          <h1>Grafico</h1>
+        </div>
+
+      </div>
       <div className='row'>
-        <div className='col-3 p-3'>
-          <div className='d-flex'>
-            <div className='title'>
-              <Proyecto1
-                title={projectData.title}
-                info={projectData.info}
-                total={projectData.total}
-              />
-            </div>
-          </div>
+
+        <div className='col-sm'>
+         <ListProyects title={'Proyecto por constructora'} data = {projectData}
+         />
         </div>
 
-        <div className='col-3 p-3'>
-          <div className='d-flex'>
-            <div className='title'>
-              <Proyecto2
-                title={projectData2.title}
-                info={projectData2.info}
-                total={projectData2.total}
-              />
-            </div>
-          </div>
+        <div className='col-sm'>
+        <ListProyects title={'Proyectos por entidad fiduciaria'} data = {projectData}/>
         </div>
 
-        <div className='col-3 p-3'>
-          <Sector />
+        <div className='col-sm'>
+          <Sector/>
         </div>
+
+        <div className='col'>
+          <h1>Grafico</h1>
+        </div>
+
       </div>
     </div>
-    </div>
-    
-  
   );
 }
 
